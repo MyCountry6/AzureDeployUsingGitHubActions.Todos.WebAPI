@@ -9,6 +9,7 @@ on:
 jobs:
     publish:
      runs-on: ubuntu-latest
+     
      steps:
      - uses: actions/checkout@v3
 
@@ -18,10 +19,10 @@ jobs:
          dotnet-version: '8.0.x'
          
      - name: Restore
-       run: dotnet.restore ./Todos.WebAPI.sln
+       run: dotnet restore ./Todos.WebAPI.sln
 
      - name: Build
-       run: dotnet.build ./Todos.WebAPI.sln --configuration Release
+       run: dotnet build ./Todos.WebAPI.sln --configuration Release
 
      - name: Publish
-       run: dotnet.publish ./Todos.WebAPI.sln --configuration Release --no-build
+       run: dotnet publish ./Todos.WebAPI.sln --configuration Release --no-build
